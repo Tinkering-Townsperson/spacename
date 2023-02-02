@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "spacename"
+version = "1.0.0"
+description = "An alternative to dictionaries, built on the argparse Namespace class."
+authors = ["AfterNoonPM <h2o.Drop2010+pypi@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+twine = "^4.0.2"
+wheel = "^0.38.4"
+build = "^0.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
