@@ -3,8 +3,21 @@ name = "spacename"
 version = "1.0.0"
 description = "An alternative to dictionaries, built on the argparse Namespace class."
 authors = ["AfterNoonPM <h2o.Drop2010+pypi@gmail.com>"]
+repository = "https://github.com/tinkering-townsperson/spacename"
 license = "MIT"
 readme = "README.md"
+classifiers = [
+	"Intended Audience :: Developers",
+	"License :: OSI Approved :: MIT",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: Implementation :: CPython"
+]
+
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/tinkering-townsperson/spacename/issues"
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
