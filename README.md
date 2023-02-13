@@ -44,7 +44,7 @@ print(ns.key)
 ```
 Output:
 ```py
-"val"
+val
 ```
 
 ### Adding/modifying keys and values to the Namespace
@@ -79,7 +79,7 @@ print(ns.to_dict())
 ```
 Output:
 ```py
-{'spam':'foo', 'eggs':'bar', 'bacon': 'baz'}
+{'spam': 'foo', 'eggs': 'bar', 'bacon': 'baz'}
 ```
 
 ### Converting to list
@@ -136,6 +136,10 @@ from spacename import Namespace
 ns = Namespace(spam="foo", eggs="bar", bacon="baz")
 
 print("spam" in ns)
+```
+Output:
+```py
+True
 ```
 
 [^1]: Supported package managers include, but are not limited to, pip, poetry, and any other package manager that supports the PyPI repository.
