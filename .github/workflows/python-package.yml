@@ -35,9 +35,9 @@ jobs:
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --extend-exclude=.venv,*.bak,*.tmp
+        python3 -m flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --extend-exclude=.venv,*.bak,*.tmp
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --extend-exclude=.venv,*.bak,*.tmp --extend-ignore=W191,E251
+        python3 -m flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --extend-exclude=.venv,*.bak,*.tmp --extend-ignore=W191,E251
     - name: Test with pytest
       run: |
-        pytest
+        python3 -m pytest
