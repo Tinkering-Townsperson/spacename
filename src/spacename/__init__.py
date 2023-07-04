@@ -1,4 +1,10 @@
+###################
+# IMPORTS & SETUP #
+###################
+
+from typing import List, Tuple
 __version__ = "1.0.0"
+
 
 class Namespace(object):
 	def __init__(self, **kwargs) -> None:
@@ -9,7 +15,7 @@ class Namespace(object):
 		"""
 
 		self.fill_from_dict(kwargs)
-	
+
 	def fill_from_dict(self, dictionary: dict) -> None:
 		"""Populate Namespace using dict.
 
@@ -19,7 +25,7 @@ class Namespace(object):
 
 		for key in dictionary:
 			setattr(self, key, dictionary[key])
-	
+
 	def to_dict(self) -> dict:
 		"""Return dict of self.
 
@@ -34,7 +40,7 @@ class Namespace(object):
 		Returns:
 			str: String representation of self.
 		"""
-		
+
 		type_name = type(self).__name__
 		arg_strings = []
 		star_args = {}
@@ -57,10 +63,10 @@ class Namespace(object):
 
 		Returns:
 			bool: Is self equal to other?
-		"""		
+		"""
 		return vars(self) == vars(other) if isinstance(other, type(self)) else NotImplemented
 
-	def __contains__(self, key)-> bool:
+	def __contains__(self, key) -> bool:
 		"""Check if self contains given key.
 
 		Args:
@@ -68,7 +74,7 @@ class Namespace(object):
 
 		Returns:
 			bool: Is key in self?
-		"""			
+		"""
 		return key in self.__dict__
 
 	def __iter__(self):
@@ -79,12 +85,12 @@ class Namespace(object):
 		"""
 		return iter(self._get_kwargs())
 
-	def _get_kwargs(self) -> list[tuple[str]]:
+	def _get_kwargs(self) -> List[Tuple[str]]:
 		"""Return keyword arguments of self in a list of tuples.
 
 		Returns:
-			list[tuple[str]]: List of self's keyword arguments.
-		"""		
+			List[Tuple[str]]: List of self's keyword arguments.
+		"""
 		return list(self.__dict__.items())
 
 	def _get_args(self) -> list:
@@ -92,5 +98,5 @@ class Namespace(object):
 
 		Returns:
 			list: List of self's arguments
-		"""		
+		"""
 		return []
